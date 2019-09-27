@@ -140,13 +140,9 @@ def parse_arguments(argv):
 
     parser.add_argument('input_dir', type=str, help='Directory with unaligned images.')
     parser.add_argument('output_dir', type=str, help='Directory with aligned face thumbnails.')
-    # original
-    # parser.add_argument('--image_size', type=int, help='Image size (height, width) in pixels.', default=182)
-    # parser.add_argument('--margin', type=int,
-    #                     help='Margin for the crop around the bounding box (height, width) in pixels.', default=44)
-    parser.add_argument('--image_size', type=int, help='Image size (height, width) in pixels.', default=160)
+    parser.add_argument('--image_size', type=int, help='Image size (height, width) in pixels.', default=182)
     parser.add_argument('--margin', type=int,
-                        help='Margin for the crop around the bounding box (height, width) in pixels.', default=32)
+                        help='Margin for the crop around the bounding box (height, width) in pixels.', default=44)
     parser.add_argument('--random_order',
                         help='Shuffles the order of images to enable alignment using multiple processes.',
                         action='store_true')
@@ -157,3 +153,12 @@ def parse_arguments(argv):
 
 if __name__ == '__main__':
     main(parse_arguments(sys.argv[1:]))
+    
+    '''
+    Running Configuration
+    ~/DL/Facial_Recognition/dataset/lfw
+    ~/DL/Facial_Recognition/dataset/lfw_new
+    --image_size 160
+    --margin 32
+    --random_order
+    '''
